@@ -1,0 +1,187 @@
+# Project TODO
+
+- [x] Define the vertical digital-signage screen structure with a centered square capture area, top logo/title band, and bottom control or result band.
+- [x] Build the menu screen with a BGM ON/OFF toggle, password authentication input, and startup flow for the signage experience.
+- [x] Replace the default home page with a full-screen 珍獣カメラ experience designed for portrait signage display.
+- [x] Implement the always-on camera capture screen with a centered square live preview and a primary capture button.
+- [x] Implement the 3→2→1 countdown overlay with an animation that increases text size as the countdown advances.
+- [x] Add a processing screen that displays the exact text "AI加工中です", the reception number, and a waiting animation.
+- [x] Add a result screen that displays the transformed image prominently, the reception number, and the exact guidance text "受け取りは店内スタッフまでお声掛けください！".
+- [x] Add automatic return from the result screen back to the capture screen after a fixed display interval.
+- [x] Add persistent database storage for capture jobs plus saved asset and prompt-assignment metadata needed by the AI photobooth.
+- [x] Implement server-side numbering using a date plus sequential serial format for each capture job.
+- [x] Implement server-side storage for the original image, transformed image, and metadata including reception number, detected people count, assigned prompts, and processing timestamp.
+- [x] Implement AI transformation job handling that accepts a captured image, applies the common prompt plus five variant prompts, and returns a transformed result.
+- [x] Implement up-to-five-person detection logic and block processing with a re-capture message when six or more people are detected.
+- [x] Implement non-overlapping random assignment of the five prompt variants Fluffy Beast, Little Dragon, Forest Creature, Starry Night, and Candy Imp based on the detected subject count.
+- [x] Integrate the provided BGM file named "珍獣カメラ.mp3" so it can play continuously during the experience.
+- [x] Persist the BGM ON/OFF preference from the menu within the signage session and reflect it in playback behavior.
+- [x] Add operational error states for no detected subject, too many subjects, AI failure, and storage failure with safe recovery back to capture.
+- [x] Add Vitest coverage for numbering helpers, prompt assignment, and transformation-prompt construction logic.
+- [x] Validate the running signage app through health checks plus a browser verification pass for menu-to-capture flow and kiosk-style fallback behavior.
+- [x] Document the implemented architecture, required secrets, and booth operation steps for handoff.
+- [x] Fix the menu password authentication flow so valid password entry no longer throws the incorrect-password API mutation error in web preview.
+- [x] Change the temporary management password to 1234 for the menu unlock flow.
+- [x] Reduce the post-capture result-screen wait time from 15 seconds to 10 seconds.
+- [x] Emphasize the last four digits of the reception number in larger red text and add guidance telling guests to share those four digits with staff.
+- [x] Investigate and fix the reported issue where captured or generated images are not being saved automatically after shooting.
+- [x] Add an A5 print-preview and saved layout that places square images in an 8-up 2x4 arrangement.
+- [x] Confirm and document what mechanism currently performs AI generation in the booth implementation.
+- [x] Investigate why post-capture photos are not being saved after shooting and fix the broken save path.
+- [x] Update the post-capture flow so the saved output is delivered to the browser download folder when supported by the runtime.
+- [x] Change saved booth outputs and download delivery from SVG or mixed formats to PNG.
+- [x] Return directly to the live camera stage after the result screen and ensure the camera is ready again automatically.
+- [x] Remove the menu screen and remove BGM toggle controls from the capture experience while keeping portrait signage operation.
+- [x] Restyle the booth UI to more closely match the earlier 珍獣カメラ visual design direction.
+- [x] Allow the shutter to be triggered by left mouse click in addition to the on-screen capture control.
+- [x] Remove the upper AI MONSTER PHOTO EXPERIENCE label and its surrounding frame from the capture screen.
+- [x] Remove the 珍獣カメラ / AIフォト体験 title block and replace that area with the supplied floating logo graphic.
+- [x] Remove the inner and outer guidance text around the camera frame and the capture button chrome, then add a more prominent start message in the freed space.
+- [x] Restore a right-top BGM ON/OFF switch on the capture screen with the default state set to OFF.
+- [x] Fix the capture-screen BGM switch so it reliably starts and stops playback when toggled.
+- [x] Expand left-click shutter behavior so a normal left click anywhere on the camera screen can trigger capture, while excluding UI controls such as the BGM switch.
+- [x] Make the BGM ON/OFF area itself respond to left click when the cursor is over that control region.
+- [x] Prevent clicks on the BGM toggle area from propagating into the global left-click shutter handler.
+- [x] Investigate the reported case where the booth image appeared not to save and determine whether storage, automatic download delivery, or UI feedback is failing.
+- [x] Fix the error recovery path so the camera preview reliably restarts after AI generation failures and auto-return from the error screen.
+- [x] Review the user-facing handling for usage-exhausted AI generation failures so the booth gives a clearer recovery message.
+- [x] Expand the AI image-generation prompt so the background is newly generated to match the randomly selected monster type instead of preserving the original background.
+- [x] Preserve the subject pose, expression, hairstyle, clothing silhouette and colors, and important props while harmonizing monster colors with the outfit in the updated prompt.
+- [x] Refactor the processing and post-capture booth layouts so every state fits within one screen without requiring vertical scrolling.
+- [x] Move or compress processing copy and related UI so key status information remains visible inside the square camera area or otherwise within the fixed single-screen layout.
+- [x] Switch the booth AI image-processing pipeline from the current image generator to GPT-based image editing.
+- [x] Store the provided external API key as a managed project secret and update the server integration to use it securely.
+- [x] Preserve existing booth job saving, PNG output, and result-screen behavior after the GPT image-editing migration.
+- [x] Rework the five monster transformation prompts so GPT image editing produces less human-like, more stylized family-friendly 珍獣 characters aligned with the supplied reference outputs.
+- [x] Retune the shared background prompt so each monster type appears in a richer, more storybook-like world that matches the provided Manus-style examples.
+- [x] Preserve pose, outfit recognition, and multi-subject handling while pushing stronger creature silhouettes, facial stylization, and body-shape deformation in the new prompt set.
+- [x] Diagnose and fix the Storage presign failed (502) and Storage signed URL failed (502) errors in the booth image save or retrieval flow.
+- [x] Strengthen the common and per-variant monster prompts so human skin tones are replaced more consistently by creature colors, fur, scales, plush, or other non-human surface materials.
+- [x] Retune the prompt language so facial identity and outfit recognition remain, but skin texture, body surface, and material finish are decisively transformed into the selected monster style.
+- [x] Strengthen the shared and per-variant monster prompts further so faces, limbs, body proportions, and surface materials read less like stylized humans and more like full mascot-like 珍獣.
+- [x] Retune the prompt language so human facial structure, realistic hands, and ordinary body balance are suppressed while recognizable hairstyle, pose, and outfit cues remain.
+- [x] 縦表示の撮影開始テキストを「ボタンを押して / 撮影開始！」の2行改行に修正する
+- [x] AI加工中メッセージを新しい3行の案内文へ差し替える
+- [x] 結果画面の「もう一度PNGを保存する」アイコンとボタンを削除する
+
+- [x] 縦型モニターに余白なく収まりやすいよう全画面レイアウトと各ステージ寸法を微調整する
+- [x] 撮影画面の前にパスワード 1234 で入れるログイン画面を再導入する
+- [x] ログイン画面に OFF / BGM1 / BGM2 / BGM3 / BGM4 の楽曲選択UIを追加する
+- [x] 既存BGMを削除し、添付された4曲を新しい選択式BGMとして組み込む
+- [x] ログイン後に選択したBGM設定が撮影体験へ反映されるよう再生制御を更新する
+
+- [x] 縦長表示で浮遊ロゴと見出しテキストが重ならないようヘッダー配置を再調整する
+- [x] 縦長表示で必要情報が見切れず1ページ内に収まるよう各要素の寸法と余白を最適化する
+- [x] ログイン画面の「縦型モニター向け全画面フォトブース」見出しを削除する
+- [x] ログイン画面の説明文を指定文言へ差し替える
+- [x] ログイン画面の「現在のログインパスワードは 1234 です。」文言を削除する
+- [x] BGM1〜4の曲名表示を削除する
+- [x] 縦画面でもログインボタンが見切れず1画面内に収まるようログイン画面の要素寸法と配置を再調整する
+- [x] 縦型運用の想定表示サイズでログイン画面全体が収まるよう固定高さ制約を追加する
+- [x] ログインボタンを含む全要素が縦型想定サイズ内に収まることを確認できる検証コードまたはテストを追加する
+- [x] ログイン画面のBGMエリア幅を少し狭めて全体の高さ余裕を増やす
+- [x] 縦画面で下端が見切れないようBGMエリアとログインエリアの位置関係を再調整する
+- [x] 全画面共通で上下に浮遊している既存画像演出を削除する
+- [x] ログイン前でもBGM選択時に選択曲のプレビュー再生が始まるよう音声制御を更新する
+- [x] 撮影画面から「AIがあなたを珍獣化します！」文言を削除する
+- [x] 撮影画面から選択中の楽曲表示とそのフレームを削除する
+- [x] 撮影画面の上段余白を広げつつカメラフレームを含む主要UIを下段寄せに再配置する
+- [x] 全画面の背景を黒基調から白基調へ変更し、文字色と枠色を見やすく再設計する
+- [x] 添付された6枚の画像を白背景上で大きさ・角度・位置がランダムに変化しながら浮かび上がってフェードアウトする背景演出として組み込む
+- [x] 撮影画面の背景に浮かぶPNG画像をふた周りほど大きくし、発色を濃くして、フェードアウト開始と終了を遅らせる
+- [x] 撮影画面のカメラフレーム色を黒から濃い黄色へ変更する
+- [x] 「ボタンを押して撮影開始！」の文言を赤色のポップなフォント表現へ変更する
+- [x] 撮影画面のカメラフレーム色をさらに明るい黄色へ調整する
+- [x] 「ボタンを押して撮影開始！」の文言をより太字でポップな字体にし、拡大縮小アニメーションを追加する
+- [x] AI加工中画面で処理メッセージと待機ドットを画面上部かつカメラフレーム外へ移動する
+- [x] AI加工中画面で受付番号を画面下部かつカメラフレーム外へ移動する
+- [x] AI加工中の黄色枠内に間違い探し画像を毎回1枚だけランダム表示する
+- [x] AI加工中の待機演出を間違い探しで遊べる構成へ調整する
+- [x] パスワード入力後の撮影画面上部余白に添付動画をループ表示する
+- [x] 添付動画の音声はBGM設定に関係なく撮影画面で常時再生し、撮影ボタン押下時に停止する
+- [x] 撮影画面へ戻った際に添付動画が先頭から再開してループし続ける制御を追加する
+- [x] 添付動画の配置と再生制御の回帰を確認するVitestまたは検証コードを追加する
+- [x] 添付動画の再生がブラウザに拒否された場合でも現場で開始できる再生導線を追加する
+- [x] 撮影画面のプロモ動画再生ロジックを切り出し、開始・停止・先頭リスタートを確認する挙動テストを追加する
+- [x] 撮影画面上部の案内動画を新しい添付動画へ差し替える
+- [x] 新しい動画アセットURLに合わせて撮影画面の再生参照先と回帰テストを更新する
+- [x] 差し替え後の動画再生導線と既存動作を再検証する
+- [x] プロモ動画再生で play() が new load request に中断されるエラーの発生条件を特定し解消する
+- [x] 撮影画面上部の案内動画を新しい添付動画へ差し替える
+- [x] 画像生成設定を quality medium・1024x1024 に変更する
+- [x] 動画再生ロジックと生成設定変更の回帰を確認するVitestまたは検証コードを更新する
+- [x] AIへ渡す撮影画像を左右反転してから被写体検出と画像生成へ渡す
+- [x] 左右反転後も保存画像と印刷レイアウトの整合性が崩れないよう関連処理を確認する
+- [x] 左右反転入力の回帰を確認するVitestまたは検証コードを追加する
+- [x] ログイン認証の固定パスワードを廃止し、月ごとに指定の5桁パスワードへ自動切替する
+- [x] 先頭ゼロを含む月別パスワードでも正しく認証できるよう入力値と判定処理を調整する
+- [x] 月別5桁パスワード切替の回帰を確認するVitestまたは検証コードを追加する
+- [x] USB接続した巨大ボタンでシャッターを起動できる前提条件と入力方式を確認する
+- [x] 既存の左クリックシャッターと両立しながら巨大ボタン入力でも撮影開始できるよう入力処理を調整する
+- [x] 巨大ボタン入力対応の回帰を確認するVitestまたは検証コードを追加する
+- [x] USB巨大ボタンがWindows上で実際に送出する入力方式（Spaceキー）を特定する
+- [x] 巨大ボタンの実入力方式に合わせて、フォーカス依存や誤発火条件を整理したうえで撮影トリガーを調整する
+- [x] 巨大ボタン相当の入力で撮影が開始し、入力欄などでは誤発火しないことを確認する挙動テストを追加する
+- [x] 撮影画面のカメラフレームを上部動画に被らない範囲で少し上へ移動する
+- [x] 撮影画面の「ボタンを押して撮影開始！」文言をカメラフレームに合わせて少し上へ移動する
+- [x] 結果画面の表示時間を現状より3秒延長する
+- [x] 結果画面の案内文を「受け取りは店内スタッフに受付番号をお伝えください。」へ変更し、現状より目立つ表現へ調整する
+- [x] 上記レイアウト・文言・表示時間変更の回帰テストを更新する
+- [x] AI加工中画面の案内文を少し上へ移動する
+- [x] AI加工中画面の受付番号を少し上へ移動する
+- [x] 結果画面のA5保存案内や自動復帰秒数などの補足文言を削除する
+- [x] 上記文言位置と表示内容変更の回帰テストを更新する
+- [x] AI加工中画面の案内文と受付番号を、間違い探しフレームに被らないぎりぎりまでさらに上へ移動する
+- [x] 結果画面の受付番号と案内文を、プレビュー画像に被らないぎりぎりまでさらに上へ移動する
+- [x] 上記の縦位置再調整に合わせて回帰テストを更新する
+- [x] AI加工中画面の案内文・受付番号と間違い探しフレームの間隔をレイアウト定数で管理し、非重なり条件を確認できるようにする
+- [x] 結果画面の受付番号・案内文とプレビュー画像の間隔をレイアウト定数で管理し、非重なり条件を確認できるようにする
+- [x] 上記レイアウト定数と非重なり条件の回帰テストを追加する
+- [x] AI加工中画面のフレーム高さ・下部ブロック余白・利用可能高さからクリアランスを計算する純粋関数を追加する
+- [x] 結果画面のプレビュー領域と案内パネルの間隔を計算する純粋関数を追加する
+- [x] 想定縦画面サイズでprocessing/resultともに非重なりを保証する実レイアウト計算ベースのテストを追加する
+- [x] ログイン画面下段に管理者メニュー導線を追加する
+- [x] 管理者専用パスワード mf1count で入れる認証画面を実装する
+- [x] 端末ごとに自動IDを発行・保持し、撮影イベントへ付与する
+- [x] 撮影回数を日時・端末別に保存できる集計用データ構造を追加する
+- [x] 管理画面で端末別の1時間ごとの撮影集計を表示する
+- [x] 管理者認証と集計ロジックの回帰テストを追加・更新する
+- [x] 集計イベント保存が失敗しても撮影開始は継続する fail-open 実装にし、ログ記録失敗時の扱いを追加する
+- [x] 管理画面に集計読込中・読込失敗・データ0件の明示的なUIを追加する
+- [x] 管理画面UI状態と、集計保存失敗時でも撮影が継続することの回帰テストを追加する
+- [x] trackCaptureIntent が失敗しても countdown→prepareCapture→processing/result へ進めることを実行ベースで検証するテストを追加する
+- [x] 管理画面の loading / error / empty state を実行ベースまたはロジックベースで確認するテストへ強化する
+- [x] trackCaptureIntent 失敗後でも countdown・prepareCapture・processing/result 遷移が継続することを、分離ハンドラまたは実行ベースで検証するテストを追加する
+- [x] 管理者パスワード mf1count でログインできない原因を特定する
+- [x] 管理者認証の送信・判定・セッション保存の不具合を修正する
+- [x] 管理者ログイン回帰テストと表示確認を更新する
+- [x] 管理者ログイン画面から mf1count で実際に認証完了し、管理集計画面へ遷移できることを確認する実行ベース検証を追加する
+- [x] 縦長比率で管理者メニューがログインボタンやそのアイコンと重ならないよう、サイズをやや小さくして外枠の下側へ再配置する
+- [x] 初期表示時に管理者メニューへパスワードなしで入れてしまう原因を特定する
+- [x] 管理者メニューの初回無認証ログイン不具合を修正する
+- [x] 上記UI配置と管理者認証の回帰テスト・表示確認を更新する
+- [x] 管理者メニューを開いた直後は未認証状態でログインフォームが表示され、mf1count 入力後にのみ集計画面が表示されることを確認する実行ベースの検証を追加する
+- [x] 縦長比率で管理者メニュー導線がログインボタン領域と重ならず、外枠の下側に配置されることを確認する明示的なレイアウト検証を追加する
+- [x] 管理者メニューを開いた直後はログインフォームが表示され、sessionStorage 未設定では集計UIが出ないことを確認する実行ベースのUI/統合テストを追加する
+- [x] mf1count 入力後にのみ管理集計UIへ遷移できることを、今回の再認証ガードを含めて実行ベースで検証する
+- [x] 通常ログイン画面のBGM領域とパスワード領域の縦幅を全体的に圧縮する
+- [x] 縦長画面で通常ログイン画面の全要素が1画面内に収まるよう親レイアウトと余白を再調整する
+- [x] 上記ログイン画面の縦長収まりに合わせて回帰テストと表示確認を更新する
+- [x] 撮影画面の「ボタンを押して撮影開始！」をカメラフレーム横幅に合わせて大きくする
+- [x] AI加工中画面の受付番号・案内文の文字を大きくする
+- [x] プレビュー画面の文字・受付番号を大きくする（受付番号は特に大きめ）
+- [x] AI加工中の案内文を「不思議な世界を探索中・・・\nあなただけの珍獣は見つかるかな？\nもう少し待ってみよう！」に変更する
+- [x] 全画面をスクロールなしで1画面に収まるよう調整する
+- [x] 上記表示調整に合わせて回帰テストを更新する
+- [x] 43インチ縦型モニター想定で撮影画面の開始案内文字を現状より大幅に拡大する
+- [x] 43インチ縦型モニター想定でAI加工中画面の案内文と受付番号を現状より大幅に拡大する
+- [x] 43インチ縦型モニター想定で結果画面の案内文と受付番号を現状より大幅に拡大する
+- [x] 43インチ縦型モニター想定でもスクロールなしで1画面に収まるようレイアウトを再調整する
+- [x] 上記大画面向け文字拡大に合わせて回帰テストを更新する
+- [x] 43インチ縦型モニター想定のviewport条件で、撮影画面・AI加工中画面・結果画面がスクロールなしで1画面に収まることを検証するレイアウトテストを追加する
+- [x] 43インチ想定で拡大した受付番号・案内文とフレーム/プレビューが重ならないことを実レイアウト計算またはUIテストで確認する
+- [x] 43インチ縦型 viewport（1080x1920想定）で camera / processing / result 各画面の scrollHeight <= clientHeight を確認するUIまたはレイアウトテストを追加する
+- [x] 43インチ想定で受付番号・案内文とフレーム/プレビューの非重なりを、Home実装と同じ寸法源を使う共有レイアウト計算関数またはDOMベースUIテストで検証する
+- [x] 43インチ向けレイアウトテストの概算マジックナンバーを廃止し、実装と同期する定数・計算式へ置き換える
+- [ ] 現在の動的サイト一式のソースコードを GitHub リポジトリー kamesenryu0gou/monster-cammera へ反映する
+- [ ] GitHub へ反映したコミット内容と push 結果を確認する

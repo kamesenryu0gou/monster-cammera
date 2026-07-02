@@ -1,0 +1,120 @@
+{
+  "query": "SELECT jobId, status, sourceImageUrl, generatedImageUrl, printLayoutUrl, errorCode, errorMessage, createdAt, processedAt FROM booth_jobs ORDER BY createdAt DESC LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway06.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2AW4Fn7h5PBQbeq.root --database UuArEiGNbymaVisGtaY9eS --execute SELECT jobId, status, sourceImageUrl, generatedImageUrl, printLayoutUrl, errorCode, errorMessage, createdAt, processedAt FROM booth_jobs ORDER BY createdAt DESC LIMIT 10;",
+  "rows": [
+    {
+      "jobId": "20260527-0015",
+      "status": "completed",
+      "sourceImageUrl": "/manus-storage/booth/20260527-0015/original_a3c923e9.png",
+      "generatedImageUrl": "/manus-storage/generated/1779876490435_f15e7a34.png",
+      "printLayoutUrl": "/manus-storage/booth/20260527-0015/print-layout_ec049c39.png",
+      "errorCode": "NULL",
+      "errorMessage": "NULL",
+      "createdAt": "2026-05-27 10:07:51",
+      "processedAt": "2026-05-27 10:08:18"
+    },
+    {
+      "jobId": "20260527-0014",
+      "status": "completed",
+      "sourceImageUrl": "/manus-storage/booth/20260527-0014/original_771a2a7c.png",
+      "generatedImageUrl": "/manus-storage/generated/1779876292617_2a1023ef.png",
+      "printLayoutUrl": "/manus-storage/booth/20260527-0014/print-layout_c83689b6.png",
+      "errorCode": "NULL",
+      "errorMessage": "NULL",
+      "createdAt": "2026-05-27 10:04:32",
+      "processedAt": "2026-05-27 10:05:05"
+    },
+    {
+      "jobId": "20260527-0013",
+      "status": "completed",
+      "sourceImageUrl": "/manus-storage/booth/20260527-0013/original_07bd59b6.png",
+      "generatedImageUrl": "/manus-storage/generated/1779876051454_2fd9375f.png",
+      "printLayoutUrl": "/manus-storage/booth/20260527-0013/print-layout_468f0303.png",
+      "errorCode": "NULL",
+      "errorMessage": "NULL",
+      "createdAt": "2026-05-27 10:00:25",
+      "processedAt": "2026-05-27 10:00:59"
+    },
+    {
+      "jobId": "20260527-0012",
+      "status": "completed",
+      "sourceImageUrl": "/manus-storage/booth/20260527-0012/original_430a875d.png",
+      "generatedImageUrl": "/manus-storage/generated/1779875941170_ffc5df1b.png",
+      "printLayoutUrl": "/manus-storage/booth/20260527-0012/print-layout_cf343a56.png",
+      "errorCode": "NULL",
+      "errorMessage": "NULL",
+      "createdAt": "2026-05-27 09:58:40",
+      "processedAt": "2026-05-27 09:59:09"
+    },
+    {
+      "jobId": "20260527-0011",
+      "status": "completed",
+      "sourceImageUrl": "/manus-storage/booth/20260527-0011/original_9aeccefd.png",
+      "generatedImageUrl": "/manus-storage/generated/1779875682117_dfdefa0a.png",
+      "printLayoutUrl": "/manus-storage/booth/20260527-0011/print-layout_fb72580e.png",
+      "errorCode": "NULL",
+      "errorMessage": "NULL",
+      "createdAt": "2026-05-27 09:54:21",
+      "processedAt": "2026-05-27 09:54:50"
+    },
+    {
+      "jobId": "20260527-0010",
+      "status": "completed",
+      "sourceImageUrl": "/manus-storage/booth/20260527-0010/original_475ca77c.png",
+      "generatedImageUrl": "/manus-storage/generated/1779874056411_17eb0d23.png",
+      "printLayoutUrl": "/manus-storage/booth/20260527-0010/print-layout_a0518942.png",
+      "errorCode": "NULL",
+      "errorMessage": "NULL",
+      "createdAt": "2026-05-27 09:27:14",
+      "processedAt": "2026-05-27 09:27:44"
+    },
+    {
+      "jobId": "20260527-0009",
+      "status": "completed",
+      "sourceImageUrl": "/manus-storage/booth/20260527-0009/original_37d64b05.png",
+      "generatedImageUrl": "/manus-storage/generated/1779873857337_d576be04.png",
+      "printLayoutUrl": "/manus-storage/booth/20260527-0009/print-layout_4d1fc806.png",
+      "errorCode": "NULL",
+      "errorMessage": "NULL",
+      "createdAt": "2026-05-27 09:23:54",
+      "processedAt": "2026-05-27 09:24:28"
+    },
+    {
+      "jobId": "20260527-0008",
+      "status": "completed",
+      "sourceImageUrl": "/manus-storage/booth/20260527-0008/original_dd273615.jpg",
+      "generatedImageUrl": "/manus-storage/generated/1779873401129_86553162.png",
+      "printLayoutUrl": "/manus-storage/booth/20260527-0008/print-layout_dc8f888a.svg",
+      "errorCode": "NULL",
+      "errorMessage": "NULL",
+      "createdAt": "2026-05-27 09:16:19",
+      "processedAt": "2026-05-27 09:16:49"
+    },
+    {
+      "jobId": "20260527-0007",
+      "status": "completed",
+      "sourceImageUrl": "/manus-storage/booth/20260527-0007/original_bb7dac45.jpg",
+      "generatedImageUrl": "/manus-storage/generated/1779873228493_c03bf79b.png",
+      "printLayoutUrl": "/manus-storage/booth/20260527-0007/print-layout_181d18c5.svg",
+      "errorCode": "NULL",
+      "errorMessage": "NULL",
+      "createdAt": "2026-05-27 09:13:22",
+      "processedAt": "2026-05-27 09:13:56"
+    },
+    {
+      "jobId": "20260527-0006",
+      "status": "completed",
+      "sourceImageUrl": "/manus-storage/booth/20260527-0006/original_afba03b1.jpg",
+      "generatedImageUrl": "/manus-storage/generated/1779872719549_392303a2.png",
+      "printLayoutUrl": "/manus-storage/booth/20260527-0006/print-layout_c27a35f5.svg",
+      "errorCode": "NULL",
+      "errorMessage": "NULL",
+      "createdAt": "2026-05-27 09:04:55",
+      "processedAt": "2026-05-27 09:05:27"
+    }
+  ],
+  "messages": [],
+  "stdout": "jobId\tstatus\tsourceImageUrl\tgeneratedImageUrl\tprintLayoutUrl\terrorCode\terrorMessage\tcreatedAt\tprocessedAt\n20260527-0015\tcompleted\t/manus-storage/booth/20260527-0015/original_a3c923e9.png\t/manus-storage/generated/1779876490435_f15e7a34.png\t/manus-storage/booth/20260527-0015/print-layout_ec049c39.png\tNULL\tNULL\t2026-05-27 10:07:51\t2026-05-27 10:08:18\n20260527-0014\tcompleted\t/manus-storage/booth/20260527-0014/original_771a2a7c.png\t/manus-storage/generated/1779876292617_2a1023ef.png\t/manus-storage/booth/20260527-0014/print-layout_c83689b6.png\tNULL\tNULL\t2026-05-27 10:04:32\t2026-05-27 10:05:05\n20260527-0013\tcompleted\t/manus-storage/booth/20260527-0013/original_07bd59b6.png\t/manus-storage/generated/1779876051454_2fd9375f.png\t/manus-storage/booth/20260527-0013/print-layout_468f0303.png\tNULL\tNULL\t2026-05-27 10:00:25\t2026-05-27 10:00:59\n20260527-0012\tcompleted\t/manus-storage/booth/20260527-0012/original_430a875d.png\t/manus-storage/generated/1779875941170_ffc5df1b.png\t/manus-storage/booth/20260527-0012/print-layout_cf343a56.png\tNULL\tNULL\t2026-05-27 09:58:40\t2026-05-27 09:59:09\n20260527-0011\tcompleted\t/manus-storage/booth/20260527-0011/original_9aeccefd.png\t/manus-storage/generated/1779875682117_dfdefa0a.png\t/manus-storage/booth/20260527-0011/print-layout_fb72580e.png\tNULL\tNULL\t2026-05-27 09:54:21\t2026-05-27 09:54:50\n20260527-0010\tcompleted\t/manus-storage/booth/20260527-0010/original_475ca77c.png\t/manus-storage/generated/1779874056411_17eb0d23.png\t/manus-storage/booth/20260527-0010/print-layout_a0518942.png\tNULL\tNULL\t2026-05-27 09:27:14\t2026-05-27 09:27:44\n20260527-0009\tcompleted\t/manus-storage/booth/20260527-0009/original_37d64b05.png\t/manus-storage/generated/1779873857337_d576be04.png\t/manus-storage/booth/20260527-0009/print-layout_4d1fc806.png\tNULL\tNULL\t2026-05-27 09:23:54\t2026-05-27 09:24:28\n20260527-0008\tcompleted\t/manus-storage/booth/20260527-0008/original_dd273615.jpg\t/manus-storage/generated/1779873401129_86553162.png\t/manus-storage/booth/20260527-0008/print-layout_dc8f888a.svg\tNULL\tNULL\t2026-05-27 09:16:19\t2026-05-27 09:16:49\n20260527-0007\tcompleted\t/manus-storage/booth/20260527-0007/original_bb7dac45.jpg\t/manus-storage/generated/1779873228493_c03bf79b.png\t/manus-storage/booth/20260527-0007/print-layout_181d18c5.svg\tNULL\tNULL\t2026-05-27 09:13:22\t2026-05-27 09:13:56\n20260527-0006\tcompleted\t/manus-storage/booth/20260527-0006/original_afba03b1.jpg\t/manus-storage/generated/1779872719549_392303a2.png\t/manus-storage/booth/20260527-0006/print-layout_c27a35f5.svg\tNULL\tNULL\t2026-05-27 09:04:55\t2026-05-27 09:05:27\n",
+  "stderr": "",
+  "execution_time_ms": 1946
+}
