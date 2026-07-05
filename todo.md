@@ -183,5 +183,8 @@
 - [x] 43インチ縦型 viewport（1080x1920想定）で camera / processing / result 各画面の scrollHeight <= clientHeight を確認するUIまたはレイアウトテストを追加する
 - [x] 43インチ想定で受付番号・案内文とフレーム/プレビューの非重なりを、Home実装と同じ寸法源を使う共有レイアウト計算関数またはDOMベースUIテストで検証する
 - [x] 43インチ向けレイアウトテストの概算マジックナンバーを廃止し、実装と同期する定数・計算式へ置き換える
-- [ ] 現在の動的サイト一式のソースコードを GitHub リポジトリー kamesenryu0gou/monster-cammera へ反映する
-- [ ] GitHub へ反映したコミット内容と push 結果を確認する
+- [x] 現在の動的サイト一式のソースコードを GitHub リポジトリー kamesenryu0gou/monster-cammera へ反映する
+- [x] GitHub へ反映したコミット内容と push 結果を確認する
+- [ ] UI・機能・BGM関連・保存処理を含む動的サイト一式が GitHub リポジトリー kamesenryu0gou/monster-cammera に漏れなく入っているか再点検する
+- [ ] GitHub リポジトリーと現行プロジェクトの差分を確認し、不足があれば再同期して push する
+- [ ] UI・機能・BGM・保存処理の主要ソースが GitHub 上に含まれることを確認する
